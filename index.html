@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Userlist Vue Exercise</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="userlist-app" class="container">
+      <div class="row">
+        <div class="column column-30">
+          <h3>Add new User</h3>
+          <form>
+            <div class="row">
+              <div class="column column-33">
+                <label for="user-name">Name</label>
+                <input type="text" id="user-name" />
+              </div>
+              <div class="column column-33">
+                <label for="user-age">Age</label>
+                <input type="text" id="user-age" />
+              </div>
+              <div class="column column-33">
+                <label for="user-hometown">Hometown</label>
+                <input type="text" id="user-hometown" />
+              </div>
+            </div>
+
+            <button class="float-right">Add User</button>
+            <div class="clearfix"></div>
+          </form>
+          <hr />
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <h1>
+            List of users
+            <span class="tiny-text">1 User in the list</span>
+          </h1>
+        </div>
+        <div class="column column-30 column-offset-25">
+          <form>
+            <label for="user-search">Search by name</label>
+            <input type="text" id="user-search" />
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>hometown</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Stephen Curry</td>
+                <td>27</td>
+                <td>Berlin</td>
+                <td class="text-right">
+                  <button class="button button-outline">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
