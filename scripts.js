@@ -1,6 +1,7 @@
 Vue.createApp({
   data() {
     return {
+      searchQuery: "",
       users: [
         {
           name: "Joe",
@@ -25,4 +26,14 @@ Vue.createApp({
       ],
     };
   },
-}).mount("#nix-app");
+  computed: {
+    filteredUsers() {
+      return this.users.filter((user) =>
+        user.name.toLowerCase().startsWith(this.searchQuery.toLowerCase())
+      );
+    },
+    userTotalCount() {
+      return this.filteredUsers.length;
+    },
+  },
+}).mount("#userlist-app");

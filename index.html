@@ -47,13 +47,13 @@
         <div class="column">
           <h1>
             List of users
-            <span class="tiny-text">1 User in the list</span>
+            <span class="tiny-text">{{ userTotalCount }} User in the list</span>
           </h1>
         </div>
         <div class="column column-30 column-offset-25">
           <form>
             <label for="user-search">Search by name</label>
-            <input type="text" id="user-search" />
+            <input type="text" id="user-search" v-model="searchQuery" />
           </form>
         </div>
       </div>
@@ -69,10 +69,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Stephen Curry</td>
-                <td>27</td>
-                <td>Berlin</td>
+              <tr v-for="(user, index) in filteredUsers" v-bind:key="index">
+                <td>{{ user.name }}</td>
+                <td>{{ user.age }}</td>
+                <td>{{ user.hometown }}</td>
                 <td class="text-right">
                   <button class="button button-outline">Delete</button>
                 </td>
